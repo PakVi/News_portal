@@ -18,9 +18,15 @@ class Author(models.Model):
         self.ratingAuthor = pRait*3 + cRait
         self.save()
 
+    def __str__(self):
+        return str(self.authorUser)
+        # return str(self.ratingAuthor)
 
 class Category(models.Model):
     name = models.CharField(max_length=64, unique=True)
+
+    def __str__(self):
+        return self.name
 
 
 class Post(models.Model):
@@ -34,7 +40,9 @@ class Post(models.Model):
     )
     categoryType = models.CharField(max_length=2, choices=CATEGORY_CHOICES, default=ARTICLE)
     dateCreation = models.DateTimeField(auto_now_add=True)
-    postCategory = models.ManyToManyField(Category, through="PostCategory")
+    # postCategory = models.ManyToManyField(Category, through="PostCategory")
+    # category = models.ForeignKey(Category, null=True, blank=True, on_delete=models.SET_NULL)
+    category = models.ManyToManyField(Category)
     title = models.CharField(max_length=128)
     text = models.TextField()
     rating = models.SmallIntegerField(default=0)
@@ -51,9 +59,20 @@ class Post(models.Model):
         return self.text[0:123]+'...'
 
 
-class PostCategory(models.Model):
-    postThrough = models.ForeignKey(Post, on_delete=models.CASCADE)
-    categoryThrough = models.ForeignKey(Category, on_delete=models.CASCADE)
+    def __str__(self):
+        return str(self.title)
+
+    class Meta:
+        verbose_name = 'Пост'
+        verbose_name_plural = 'Посты'
+        ordering = ['dateCreation']
+
+# class PostCategory(models.Model):
+#     postThrough = models.ForeignKey(Post, on_delete=models.CASCADE)
+#     categoryThrough = models.ForeignKey(Category, on_delete=models.CASCADE)
+#
+#     def __str__(self):
+#         return str(self.categoryThrough)
 
 
 
@@ -72,3 +91,6 @@ class Comment(models.Model):
     def dislike(self):
         self.rating -= 1
         self.save()
+
+    def __str__(self):
+        return str(self.commentPost)
