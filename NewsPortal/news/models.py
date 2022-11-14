@@ -43,6 +43,7 @@ class Post(models.Model):
     # postCategory = models.ManyToManyField(Category, through="PostCategory")
     # category = models.ForeignKey(Category, null=True, blank=True, on_delete=models.SET_NULL)
     category = models.ManyToManyField(Category)
+    # category = models.ManyToManyField('Category', through = "PostCategory")
     title = models.CharField(max_length=128)
     text = models.TextField()
     rating = models.SmallIntegerField(default=0)
@@ -61,6 +62,10 @@ class Post(models.Model):
 
     def __str__(self):
         return str(self.title)
+
+
+    def get_absolute_url(self):
+        return reverse('product_detail', args=[str(self.id)])
 
     class Meta:
         verbose_name = 'Пост'

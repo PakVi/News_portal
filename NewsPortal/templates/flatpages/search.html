@@ -1,3 +1,4 @@
+
 {% extends 'flatpages/default.html' %}
 {% load custom_filters %}
 {% block title %}
@@ -5,15 +6,14 @@ News
 {% endblock title %}
 
 {% block content %}
-   <h1>Все новости</h1>
+   <h1>Все новсоти</h1>
 
-<a href="http://127.0.0.1:8000/news/search/">Поиск новостей</a>
 
-<!--   <form action="" method="get">-->
+   <form action="" method="get">
 
-<!--       {{ filterset.form.as_p }}-->
+       {{ filterset.form.as_p }}
 
-<!--       <input type="submit" value="Найти" />-->
+       <input type="submit" value="Найти" />
 
 
    </form>
@@ -60,7 +60,6 @@ News
            <a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
        {% endif %}
    {% endif %}
-
 
 
 {% endblock content %}
