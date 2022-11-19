@@ -1,0 +1,9 @@
+
+без права редактирования
+login:test@test.com
+password:test12345
+
+
+c правами редактирования
+login:author@test.com
+password:test12345

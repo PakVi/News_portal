@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models import Sum
+from django.urls import reverse
 
 class Author(models.Model):
     authorUser = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -40,10 +41,9 @@ class Post(models.Model):
     )
     categoryType = models.CharField(max_length=2, choices=CATEGORY_CHOICES, default=ARTICLE)
     dateCreation = models.DateTimeField(auto_now_add=True)
-    # postCategory = models.ManyToManyField(Category, through="PostCategory")
+    postCategory = models.ManyToManyField(Category, through="PostCategory")
     # category = models.ForeignKey(Category, null=True, blank=True, on_delete=models.SET_NULL)
-    category = models.ManyToManyField(Category)
-    # category = models.ManyToManyField('Category', through = "PostCategory")
+    # category = models.ManyToManyField(Category, through="PostCategory")
     title = models.CharField(max_length=128)
     text = models.TextField()
     rating = models.SmallIntegerField(default=0)
@@ -65,19 +65,19 @@ class Post(models.Model):
 
 
     def get_absolute_url(self):
-        return reverse('product_detail', args=[str(self.id)])
+        return reverse('post_detail', args=[str(self.id)])
 
     class Meta:
         verbose_name = 'Пост'
         verbose_name_plural = 'Посты'
         ordering = ['dateCreation']
 
-# class PostCategory(models.Model):
-#     postThrough = models.ForeignKey(Post, on_delete=models.CASCADE)
-#     categoryThrough = models.ForeignKey(Category, on_delete=models.CASCADE)
-#
-#     def __str__(self):
-#         return str(self.categoryThrough)
+class PostCategory(models.Model):
+    postThrough = models.ForeignKey(Post, on_delete=models.CASCADE)
+    categoryThrough = models.ForeignKey(Category, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return str(self.categoryThrough)
 
 
 

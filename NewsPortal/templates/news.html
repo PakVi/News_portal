@@ -5,10 +5,9 @@ News
 {% endblock title %}
 
 {% block content %}
-   <h1>Все новости</h1>
+   <h1>Все новсоти</h1>
 
 <a href="http://127.0.0.1:8000/news/search/">Поиск новостей</a>
-
 <!--   <form action="" method="get">-->
 
 <!--       {{ filterset.form.as_p }}-->
@@ -16,7 +15,13 @@ News
 <!--       <input type="submit" value="Найти" />-->
 
 
-   </form>
+<!--   </form>-->
+
+    {% if perms.news.add_post %}
+    <a href="{% url 'post_create' %}">Добавить новость</a>
+    {% endif %}
+
+
    <hr>
    {% if posts %}
        <table>
@@ -24,6 +29,10 @@ News
                <td>Заголовок</td>
                <td>Описание</td>
                <td>Дата</td>
+
+               {% if perms.news.post_update or perms.news.post_delete %}
+               <td>Действия</td>
+               {% endif %}
            </tr>
 
            {% for post in posts %}
@@ -32,6 +41,16 @@ News
                <td>{{ post.text|truncatechars:20 |censor }}</td>
                <td>{{ post.dateCreation }}</td>
 
+               <td>
+
+                    {% if perms.news.change_post %}
+                    <a href="{% url 'post_update' pk=post.id %}">Изменить</a>
+                    {% endif %}
+                    {% if perms.news.delete_post %}
+                    <a href="{% url 'post_delete' post.id %}">Удалить</a>
+                    {% endif %}
+               </td>
+
            </tr>
            {% endfor %}
 
@@ -39,7 +58,6 @@ News
    {% else %}
        <h2>Новостей нет!</h2>
    {% endif %}
-
 
    {% if page_obj.has_previous %}
        <a href="?page=1">1</a>
@@ -60,7 +78,5 @@ News
            <a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
        {% endif %}
    {% endif %}
-
-
 
 {% endblock content %}
