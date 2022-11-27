@@ -5,19 +5,31 @@ News
 {% endblock title %}
 
 {% block content %}
-   <h1>Все новости</h1>
+   <h1>Все новсоти</h1>
+
+{% if is_not_subscriber %}
+    <p class ="text-center"><a href="{% url 'subscribe' category.id %}" class="btn btn-secondary btn-sm">Подписаться</a></p>
+{% endif %}
+
+<a href="http://127.0.0.1:8000/news/search/">Поиск новостей</a>
 
 
-   <form action="" method="get">
 
-       {{ filterset.form.as_p }}
+<!--{% for post in category_news_list %}-->
+<!--    <li class="list-group-item">-->
+<!--        <small>(заголовок: {{ post.title| censor }})</small>-->
+<!--        <small class="fw-bold"> категории:-->
+<!--            {% for postCategory in post.postCategory.all %}-->
+<!--                    {{postCategory}}-->
+<!--            {% endfor %}-->
+<!--            </small>-->
+<!--        <p>{{ post.text|truncatechars:20 |censor }}</p>-->
+<!--    </li>-->
+<!--{% endfor %}-->
 
-       <input type="submit" value="Найти" />
 
-
-   </form>
    <hr>
-    {% if posts %}
+
        <table>
            <tr>
                <td>Заголовок</td>
@@ -30,7 +42,7 @@ News
                {% endif %}
            </tr>
 
-           {% for post in posts %}
+           {% for post in category_news_list %}
            <tr>
 <!--               <td>{{ post.title| censor }}</td>-->
                <td><a href="{% url 'post_detail' post.id %}">{{ post.title| censor }}</a></td>
@@ -42,13 +54,11 @@ News
                <td>{{ post.text|truncatechars:20 |censor }}</td>
                <td>{{ post.dateCreation }}</td>
 
+
            </tr>
            {% endfor %}
 
        </table>
-   {% else %}
-       <h2>Новостей нет!</h2>
-   {% endif %}
 
 
    {% if page_obj.has_previous %}
@@ -70,7 +80,5 @@ News
            <a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
        {% endif %}
    {% endif %}
-
-
 
 {% endblock content %}

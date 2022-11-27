@@ -16,6 +16,9 @@ News
 
 
 <!--   </form>-->
+{% if is_not_subscriber %}
+    <p class ="text-center"><a href="{}" class="btn btn-secondary btn-sm">Подписаться</a></p>
+{% endif %}
 
     {% if perms.news.add_post %}
     <a href="{% url 'post_create' %}">Добавить новость</a>
@@ -27,6 +30,7 @@ News
        <table>
            <tr>
                <td>Заголовок</td>
+               <td>Категория</td>
                <td>Описание</td>
                <td>Дата</td>
 
@@ -37,7 +41,13 @@ News
 
            {% for post in posts %}
            <tr>
-               <td>{{ post.title| censor }}</td>
+<!--               <td>{{ post.title| censor }}</td>-->
+               <td><a href="{% url 'post_detail' post.id %}">{{ post.title| censor }}</a></td>
+                <td>
+                    {% for postCategory in post.postCategory.all %}
+                    <a href="{% url 'category_list' postCategory.id %}">{{postCategory}}</a>
+                    {% endfor %}
+                </td>
                <td>{{ post.text|truncatechars:20 |censor }}</td>
                <td>{{ post.dateCreation }}</td>
 
