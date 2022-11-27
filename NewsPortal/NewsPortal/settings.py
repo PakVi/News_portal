@@ -153,6 +153,7 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 
 
 LOGIN_REDIRECT_URL = "/news"
+LOGOUT_REDIRECT_URL = "/news"
 
 ACCOUNT_FORMS = {"signup": "accounts.forms.CustomSignupForm"}
 

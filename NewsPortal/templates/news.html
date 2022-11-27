@@ -5,6 +5,13 @@ News
 {% endblock title %}
 
 {% block content %}
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+  <p><a href="{% url 'logout' %}">Log Out</a></p>
+{% else %}
+  <p>You are not logged in</p>
+
+{% endif %}
    <h1>Все новсоти</h1>
 
 <a href="http://127.0.0.1:8000/news/search/">Поиск новостей</a>
