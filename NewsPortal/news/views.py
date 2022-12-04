@@ -7,6 +7,13 @@ from django.urls import reverse, reverse_lazy
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
+from .tasks import notify_about_new_post
+from django.utils import timezone
+from django.http import HttpResponse
+from django.views import View
+from .tasks import hello
+from .tasks import notify_weekly
+
 
 
 
@@ -69,6 +76,9 @@ class PostCreate(PermissionRequiredMixin, CreateView):
         return reverse('post_detail', args=[str(self.id)])
 
 
+
+
+
 class PostUpdate(PermissionRequiredMixin, UpdateView):
     permission_required = ('news.change_post',)
     form_class = PostForm
@@ -114,3 +124,20 @@ def subscribe(request, pk):
     return render(request, 'subscribe.html', {'category':category, 'message':message})
 
 
+
+class WeekView(View):
+    def get(self, request):
+        notify_about_new_post.delay()
+        print('celery working')
+        return redirect("/")
+
+class IndexView(View):
+    def get(self, request):
+        hello.delay()
+        return HttpResponse('Hello!')
+
+class WeekViews(View):
+    def get(self, request):
+        notify_weekly.delay()
+        print('celery work')
+        return redirect("/")
