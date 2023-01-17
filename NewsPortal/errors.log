@@ -1,0 +1,48 @@
+2023-01-17 10:40:11,516 -- ERROR -- Internal Server Error: /news/search/ --> /mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/utils/log.py *** (<class 'AttributeError'>, AttributeError("'SearchList' object has no attribute 'filtersets'"), <traceback object at 0x7f9a70a190c0>)
+Traceback (most recent call last):
+  File "/mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/NewsPortal/news/views.py", line 79, in get_context_data
+    context['filterset'] = self.filtersets
+AttributeError: 'SearchList' object has no attribute 'filtersets'
+2023-01-17 10:40:11,553 -- ERROR -- "GET /news/search/ HTTP/1.1" 500 86555 --> /mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/core/servers/basehttp.py *** None
+2023-01-17 10:40:28,957 -- ERROR -- Internal Server Error: /news/search/ --> /mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/utils/log.py *** (<class 'AttributeError'>, AttributeError("'SearchList' object has no attribute 'filtersets'"), <traceback object at 0x7f9a70a6ba00>)
+Traceback (most recent call last):
+  File "/mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/NewsPortal/news/views.py", line 79, in get_context_data
+    context['filterset'] = self.filtersets
+AttributeError: 'SearchList' object has no attribute 'filtersets'
+2023-01-17 10:40:28,970 -- ERROR -- "GET /news/search/ HTTP/1.1" 500 86549 --> /mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/core/servers/basehttp.py *** None
+2023-01-17 10:42:09,348 -- ERROR -- Internal Server Error: /news/70/edit/ --> /mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/utils/log.py *** (<class 'django.template.exceptions.TemplateDoesNotExist'>, TemplateDoesNotExist('creates.html'), <traceback object at 0x7f084c636880>)
+Traceback (most recent call last):
+  File "/mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: creates.html
+2023-01-17 10:42:09,365 -- ERROR -- "GET /news/70/edit/ HTTP/1.1" 500 85379 --> /mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/core/servers/basehttp.py *** None

@@ -1,0 +1,18 @@
+2023-01-14 14:51:44,464 INFO - Watching for file changes with StatReloader
+2023-01-14 14:52:27,338 INFO - /mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/NewsPortal/NewsPortal/settings.py changed, reloading.
+2023-01-14 14:52:39,507 INFO - Watching for file changes with StatReloader
+2023-01-14 14:54:18,326 INFO - /mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/NewsPortal/NewsPortal/settings.py changed, reloading.
+2023-01-14 14:54:30,540 INFO Watching for file changes with StatReloader
+2023-01-14 15:08:51,133 INFO Watching for file changes with StatReloader
+2023-01-14 15:08:58,663 WARNING Not Found: /
+2023-01-14 15:08:58,663 WARNING "GET / HTTP/1.1" 404 2492
+2023-01-14 15:09:03,465 INFO "GET /news/ HTTP/1.1" 200 10247
+2023-01-14 15:09:03,528 WARNING "GET /static/css/styles.css HTTP/1.1" 404 1801
+2023-01-14 15:09:06,276 INFO "GET /news/search/ HTTP/1.1" 200 9254
+2023-01-14 15:09:06,350 WARNING "GET /static/css/styles.css HTTP/1.1" 404 1801
+2023-01-14 15:09:07,243 INFO "GET /news/ HTTP/1.1" 200 10247
+2023-01-14 15:09:07,306 WARNING "GET /static/css/styles.css HTTP/1.1" 404 1801
+2023-01-14 15:09:08,301 INFO "GET /news/73 HTTP/1.1" 200 2670
+2023-01-14 15:09:08,365 WARNING "GET /static/css/styles.css HTTP/1.1" 404 1801
+2023-01-14 15:09:09,177 INFO "GET /news/ HTTP/1.1" 200 10247
+2023-01-14 15:09:09,241 WARNING "GET /static/css/styles.css HTTP/1.1" 404 1801

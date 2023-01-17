@@ -7,7 +7,7 @@ from .views import IndexView
 urlpatterns = [
     # path('default/', default ),
     path('', PostsList.as_view(), name='post_list'),
-    path('<int:pk>', PostsDetail.as_view(), name='post_detail'),
+    path('<int:pk>', (PostsDetail.as_view()), name='post_detail'),
     path('search/', SearchList.as_view(), name='post_search'),
     path('create/', PostCreate.as_view(), name='post_create'),
     path('<int:pk>/edit/', PostUpdate.as_view(), name='post_update'),

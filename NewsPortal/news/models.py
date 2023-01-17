@@ -71,6 +71,10 @@ class Post(models.Model):
     def get_absolute_ur(self):
         return f'/news/{self.id}'
 
+    # def save(self, *args, **kwargs):
+    #     super().save(*args, **kwargs)
+    #     cache.delete(f'product-{self.pk}')
+
     class Meta:
         verbose_name = 'Пост'
         verbose_name_plural = 'Посты'

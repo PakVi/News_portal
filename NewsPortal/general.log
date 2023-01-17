@@ -1,0 +1,86 @@
+2023-01-17 10:38:48,985 -- INFO -- Watching for file changes with StatReloader -- autoreload
+2023-01-17 10:39:13,805 -- WARNING -- Not Found: / -- log
+2023-01-17 10:39:13,806 -- WARNING -- "GET / HTTP/1.1" 404 2492 -- basehttp
+2023-01-17 10:39:18,483 -- INFO -- "GET /news/ HTTP/1.1" 200 10247 -- basehttp
+2023-01-17 10:39:18,570 -- WARNING -- "GET /static/css/styles.css HTTP/1.1" 404 1801 -- basehttp
+2023-01-17 10:39:19,856 -- INFO -- "GET /news/69 HTTP/1.1" 200 3468 -- basehttp
+2023-01-17 10:39:19,917 -- WARNING -- "GET /static/css/styles.css HTTP/1.1" 404 1801 -- basehttp
+2023-01-17 10:39:21,018 -- INFO -- "GET /news/ HTTP/1.1" 200 10247 -- basehttp
+2023-01-17 10:39:21,077 -- WARNING -- "GET /static/css/styles.css HTTP/1.1" 404 1801 -- basehttp
+2023-01-17 10:39:21,563 -- INFO -- "GET /news/ HTTP/1.1" 200 10247 -- basehttp
+2023-01-17 10:39:21,620 -- WARNING -- "GET /static/css/styles.css HTTP/1.1" 404 1801 -- basehttp
+2023-01-17 10:39:22,519 -- INFO -- "GET /news/search/ HTTP/1.1" 200 9254 -- basehttp
+2023-01-17 10:39:22,581 -- WARNING -- "GET /static/css/styles.css HTTP/1.1" 404 1801 -- basehttp
+2023-01-17 10:39:23,535 -- INFO -- "GET /accounts/login/ HTTP/1.1" 200 1676 -- basehttp
+2023-01-17 10:39:25,584 -- INFO -- "GET /news/ HTTP/1.1" 200 10247 -- basehttp
+2023-01-17 10:39:25,647 -- WARNING -- "GET /static/css/styles.css HTTP/1.1" 404 1801 -- basehttp
+2023-01-17 10:39:54,519 -- INFO -- /mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/NewsPortal/news/views.py changed, reloading. -- autoreload
+2023-01-17 10:40:07,161 -- INFO -- Watching for file changes with StatReloader -- autoreload
+2023-01-17 10:40:11,516 -- ERROR -- Internal Server Error: /news/search/ -- log
+Traceback (most recent call last):
+  File "/mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/NewsPortal/news/views.py", line 79, in get_context_data
+    context['filterset'] = self.filtersets
+AttributeError: 'SearchList' object has no attribute 'filtersets'
+2023-01-17 10:40:11,553 -- ERROR -- "GET /news/search/ HTTP/1.1" 500 86555 -- basehttp
+2023-01-17 10:40:28,957 -- ERROR -- Internal Server Error: /news/search/ -- log
+Traceback (most recent call last):
+  File "/mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/views/generic/base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/views/generic/base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/NewsPortal/news/views.py", line 79, in get_context_data
+    context['filterset'] = self.filtersets
+AttributeError: 'SearchList' object has no attribute 'filtersets'
+2023-01-17 10:40:28,970 -- ERROR -- "GET /news/search/ HTTP/1.1" 500 86549 -- basehttp
+2023-01-17 10:41:11,192 -- INFO -- /mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/NewsPortal/news/views.py changed, reloading. -- autoreload
+2023-01-17 10:41:23,956 -- INFO -- Watching for file changes with StatReloader -- autoreload
+2023-01-17 10:41:45,624 -- INFO -- "GET /admin/ HTTP/1.1" 302 0 -- basehttp
+2023-01-17 10:41:46,059 -- INFO -- "GET /admin/login/?next=/admin/ HTTP/1.1" 200 2218 -- basehttp
+2023-01-17 10:41:49,874 -- INFO -- "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0 -- basehttp
+2023-01-17 10:41:49,931 -- INFO -- "GET /admin/ HTTP/1.1" 200 13319 -- basehttp
+2023-01-17 10:41:56,350 -- INFO -- "GET /news/ HTTP/1.1" 200 12142 -- basehttp
+2023-01-17 10:41:56,588 -- WARNING -- "GET /static/css/styles.css HTTP/1.1" 404 1801 -- basehttp
+2023-01-17 10:41:59,002 -- INFO -- "GET /news/create/ HTTP/1.1" 200 3623 -- basehttp
+2023-01-17 10:41:59,060 -- WARNING -- "GET /static/css/styles.css HTTP/1.1" 404 1801 -- basehttp
+2023-01-17 10:42:09,348 -- ERROR -- Internal Server Error: /news/70/edit/ -- log
+Traceback (most recent call last):
+  File "/mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/virtenv/lib/python3.10/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: creates.html
+2023-01-17 10:42:09,365 -- ERROR -- "GET /news/70/edit/ HTTP/1.1" 500 85379 -- basehttp
+2023-01-17 10:42:23,239 -- INFO -- /mnt/c/Users/Vik/PycharmProjects/NewsPORTQAL/News_Portal/NewsPortal/news/views.py changed, reloading. -- autoreload
+2023-01-17 10:42:35,379 -- INFO -- Watching for file changes with StatReloader -- autoreload
+2023-01-17 10:50:40,562 -- INFO -- "GET /news/73 HTTP/1.1" 200 2670 -- basehttp
+2023-01-17 10:50:40,659 -- WARNING -- "GET /static/css/styles.css HTTP/1.1" 404 1801 -- basehttp
+2023-01-17 10:50:41,915 -- INFO -- "GET /news/ HTTP/1.1" 200 12142 -- basehttp
+2023-01-17 10:50:41,987 -- WARNING -- "GET /static/css/styles.css HTTP/1.1" 404 1801 -- basehttp
+2023-01-17 10:50:51,961 -- INFO -- "GET /news/create/ HTTP/1.1" 200 3630 -- basehttp
+2023-01-17 10:50:52,016 -- WARNING -- "GET /static/css/styles.css HTTP/1.1" 404 1801 -- basehttp
+2023-01-17 10:51:02,080 -- WARNING -- Forbidden (CSRF token missing.): /news/create/ -- log
+2023-01-17 10:51:02,081 -- WARNING -- "POST /news/create/ HTTP/1.1" 403 2506 -- basehttp

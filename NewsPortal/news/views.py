@@ -13,6 +13,11 @@ from django.http import HttpResponse
 from django.views import View
 from .tasks import hello
 from .tasks import notify_weekly
+from django.core.cache import cache
+import logging
+
+logger = logging.getLogger(__name__)
+
 
 
 
@@ -45,6 +50,15 @@ class PostsDetail(DetailView):
     model = Post
     template_name = 'news_id.html'
     context_object_name = 'posts'
+
+    def get_object(self, *args, **kwargs):
+        obj = cache.get(f'product-{self.kwargs["pk"]}', None)
+
+        if not obj:
+            obj = super().get_object(queryset=self.queryset)
+            cache.set(f'product-{self.kwargs["pk"]}', obj)
+
+        return obj
 
 
 class SearchList(ListView):
